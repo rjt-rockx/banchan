@@ -26,7 +26,7 @@ module.exports = {
     extend: {
       aspectRatio: {
         'video': '16 / 9',
-        'header-image': '3.5 / 1'
+        'header-image': '3 / 1'
       },
       spacing: {
         '128': '32rem',

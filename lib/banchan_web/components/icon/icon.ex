@@ -9,6 +9,7 @@ defmodule BanchanWeb.Components.Icon do
   prop name, :string, required: true
   prop class, :css_class
   prop gap, :number, default: 1
+  prop size, :number, default: 6
 
   slot default
 
@@ -25,6 +26,7 @@ defmodule BanchanWeb.Components.Icon do
             into: "",
             do: <<Enum.random('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')>>}
         :hook="Icon"
+        class={"w-#{@size} h-#{@size}"}
         data-lucide={@name}
       /><#slot />
     </bc-icon>

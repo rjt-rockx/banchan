@@ -14,7 +14,7 @@ defmodule BanchanWeb.Components.Nav do
   def render(assigns) do
     ~F"""
     <nav id="nav" class="navbar bg-base-100" role="navigation" aria-label="main navigation">
-      <div class="flex-none gap-4 lg:hidden items-center">
+      <div class="items-center flex-none gap-4 lg:hidden">
         <label for="drawer-toggle" class="btn btn-square btn-ghost">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,10 @@ defmodule BanchanWeb.Components.Nav do
       {#if is_nil(@current_user)}
         <div class="mx-4">
           <LiveRedirect to={Routes.login_path(Endpoint, :new)}>
-            <Icon name="log-in">Log in</Icon>
+            <div role="button" class="flex flex-row items-center gap-2">
+              Login
+              <Icon name="log-in" size="4" />
+            </div>
           </LiveRedirect>
         </div>
       {/if}
